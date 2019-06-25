@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import {ThemeContext} from './theme-context';
 
 class Train extends Component {
   render() {
     return (<div>
-               The neural network can be trained using:
-                <ol>
-                    <li>adding images done manually</li>
-                    <li>Adding dataset from popular source (kaggle etc.)</li>
-                </ol>
+               lang: {this.context}
+              
+<div>
+<button>Add category</button><button>Remove category</button>
+</div>
            </div>);
   }
 }
+
+Train.contextType = ThemeContext
 
 export default Train;
