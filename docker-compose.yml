@@ -3,7 +3,7 @@ version: "3"
 services:
 
   app:
-    image: node:alpine
+    image: vision
     volumes:
       - ./:/app
     working_dir: /app
@@ -13,7 +13,7 @@ services:
       NODE_ENV: development
     ports:
       - 8080:8080
-    command: node server.js
+    command: pm2 start process.yml --no-daemon
 
   mongo:
     image: mongo

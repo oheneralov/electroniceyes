@@ -20,7 +20,11 @@ const text = `The program is a robot vision. The neural network can be trained u
 
 // send all requests to index.html so browserHistory works
 app.get('/frontend/*', function (req, res) {
-  console.log('yes')
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
+
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 

@@ -26,7 +26,8 @@ class App extends Component {
             <NavLink to="/frontend/train">Train</NavLink>
           </li>
         </ul>
-        <Route exact path="/frontend"component={Home} />
+        <Route exact path="/"component={Home} />
+        <Route path="/frontend"component={Home} />
         <Route path="/frontend/about" component={About} />
         <Route path="/frontend/train" component={Train} />
       </div>
