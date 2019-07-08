@@ -1,6 +1,11 @@
 const express = require('express')
 const path = require('path')
 const compression = require('compression')
+const multer = require('multer')
+
+const upload = multer({
+  dest: 'uploads/' // this saves a file into a dir "uploads"
+})
 
 var app = express()
 
@@ -21,12 +26,15 @@ const text = `The program is a robot vision. The neural network can be trained u
 // send all requests to index.html so browserHistory works
 app.get('/frontend/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
+
+app.post('/backend/upload', upload.single('file-to-upload'), (req, res) => {
+  res.redirect('/');
+});
 
 var PORT = process.env.PORT || 8080
 app.listen(PORT, function() {

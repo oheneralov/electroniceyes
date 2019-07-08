@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
 export const themes = {
-  light: {
-    foreground: '#000000',
-    background: '#eeeeee',
+  en: {
+    upload_button: 'upload',
+    home_menu: 'home',
+    lang: 'en'
   },
-  dark: {
-    foreground: '#ffffff',
-    background: '#222222',
+  ukr: {
+    upload_button: 'завантажити',
+    home_menu: 'домашня',
+    lang: 'ukr'
   },
 };
 
 export const ThemeContext = React.createContext(
-  themes.dark // default value
+  themes.en // default value
 );

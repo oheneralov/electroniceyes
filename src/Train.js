@@ -4,10 +4,15 @@ import {ThemeContext} from './theme-context';
 class Train extends Component {
   render() {
     return (<div>
-               lang: {this.context}
+               Language: {this.context.lang}
               
 <div>
-<button>Add category</button><button>Remove category</button>
+    <form action="/backend/upload" enctype="multipart/form-data" method="post">
+      <label for="category">Category</label>
+      <div><input name="category" id="category" type="text" placeholder="category"/></div>
+      <div><input type="file" name="file-to-upload"/></div>
+      <div><input type="submit" value="Upload"/></div>
+    </form>
 </div>
            </div>);
   }

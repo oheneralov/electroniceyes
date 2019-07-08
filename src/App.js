@@ -6,13 +6,13 @@ import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 import About from './About';
 import Home from './Home';
 import Train from './Train';
-import {ThemeContext} from './theme-context';
+import {ThemeContext, themes} from './theme-context';
 
 
 class App extends Component {
   render() {
     return (
-       <ThemeContext.Provider value='light'>
+       <ThemeContext.Provider value={themes.en}>
        <Router>
       <div>
         <ul>
@@ -26,10 +26,10 @@ class App extends Component {
             <NavLink to="/frontend/train">Train</NavLink>
           </li>
         </ul>
-        <Route exact path="/"component={Home} />
-        <Route path="/frontend"component={Home} />
-        <Route path="/frontend/about" component={About} />
-        <Route path="/frontend/train" component={Train} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/frontend" component={Home} />
+        <Route exact path="/frontend/about" component={About} />
+        <Route exact path="/frontend/train" component={Train} />
       </div>
     </Router>
     </ThemeContext.Provider>
